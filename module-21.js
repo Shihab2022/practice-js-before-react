@@ -62,9 +62,8 @@ for (const number of numbers){
 }
 console.log(sum)
 
-/************************  multiplay all value in an array by function************************* */
-/************************  multiplay all value in an array by function************************* */
-/************************  multiplay all value in an array by function************************* */
+
+
 /************************  multiplay all value in an array by function************************* */
 /************************  multiplay all value in an array by function************************* */
 /************************  multiplay all value in an array by function************************* */

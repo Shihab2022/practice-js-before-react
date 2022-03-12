@@ -33,3 +33,15 @@
 //     return i+sum(--i)
 // }
 // console.log(sum(5))
+
+
+/************************ facktorial ************************* */
+
+function factorial(i){
+if(i==1){
+    return 1 ;
+}
+return i*factorial(--i)
+}
+console.log(factorial(5))
+console.log(factorial(10))

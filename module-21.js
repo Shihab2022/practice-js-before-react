@@ -53,8 +53,15 @@
 //     return largest
 // }
 // console.log(biggestNum(numbers))
-/************************  multiplay all value in an array by function************************* */
-/************************  multiplay all value in an array by function************************* */
+/************************  sum all value in an array ************************* */
+
+let numbers = [10,55,888,11,30,155,45,90]
+let sum=0;
+for (const number of numbers){
+    sum=sum+number;
+}
+console.log(sum)
+
 /************************  multiplay all value in an array by function************************* */
 /************************  multiplay all value in an array by function************************* */
 /************************  multiplay all value in an array by function************************* */

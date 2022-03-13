@@ -49,14 +49,14 @@
 
 /************************ show that the similar element from nasted array  ************************* */
 
-const phones =[
-    {name:'samsung' ,price:25500 ,color:'black' , model:'m25'},
-    {name:'iphone' ,price:255000 ,color:'gaygreen' , model:'iohone 13pro'},
-    {name:'mi' ,price:5500 ,color:'black' , model:'note 10'},
-    {name:'oppo' ,price:20500 ,color:'white' , model:'m25'},
-    {name:'walton' ,price:25000 ,color:'black' , model:'m25'},
-    {name:'realme' ,price:50500 ,color:'green' , model:'m25'},
-]
+// const phones =[
+//     {name:'samsung' ,price:25500 ,color:'black' , model:'m25'},
+//     {name:'iphone' ,price:255000 ,color:'gaygreen' , model:'iohone 13pro'},
+//     {name:'mi' ,price:5500 ,color:'black' , model:'note 10'},
+//     {name:'oppo' ,price:20500 ,color:'white' , model:'m25'},
+//     {name:'walton' ,price:25000 ,color:'black' , model:'m25'},
+//     {name:'realme' ,price:50500 ,color:'green' , model:'m25'},
+// ]
 
 // for (const product of phones){
 //     if(product.color.includes('black')){ //ay for ar maddomay jay object gulo ty color black asay tader kay dakbay
@@ -71,3 +71,4 @@ const phones =[
 //         console.log(product)
 //     }
 // })
+

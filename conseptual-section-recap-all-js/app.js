@@ -78,7 +78,10 @@ const dreamGirl = [
     },
   },
 ];
-console.log(dreamGirl[0].dream1.contactInfo[0]. facebook.friendsList)
+let friendsList =dreamGirl[0].dream1.contactInfo[0]. facebook.friendsList
+console.log(friendsList)
+friendsList.forEach(name =>console.log(name?.name || 'shihab'))
+// console.log(dreamGirl[0].dream1.contactInfo[0]. facebook.friendsList)
 // console.log(dreamGirl[0].dream1);
 
 // loop for in loop

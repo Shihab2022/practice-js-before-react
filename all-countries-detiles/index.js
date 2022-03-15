@@ -14,18 +14,19 @@ const backgroudChange=(colorId)=>{
 
 
 /************************************************* card section************************************************ */
+const allCountry=()=>{
+    getAllDataFromServer()   
+}
 
-
-/* const getAllDataFromServer= ()=>{
-
-
+const getAllDataFromServer= ()=>{
     fetch('https://restcountries.com/v2/all')
     .then(res=>res.json())
     .then(data =>allCard(data))
     
     }
 const allCard =(countries)=>{
-console.log(countries[0])
+document.getElementById('add-card').innerHTML=''
+document.getElementById('single-card').innerHTML=''
 const addCard =document.getElementById('add-card')
 countries.map(country =>{
 const timezones =country.timezones[0]
@@ -49,13 +50,9 @@ div.innerHTML=`
 `
 addCard.appendChild(div)
     
-})
-
-   
-   
-   
+})   
 }
-getAllDataFromServer() */
+getAllDataFromServer() 
 
 
 
@@ -63,11 +60,9 @@ getAllDataFromServer() */
 
 /************************************************* search section************************************************ */
 
-const search =()=>{
-
+ const search =()=>{
 const getData =document.getElementById('get-data').value
 if(getData){
-
 fetch(`https://restcountries.com/v2/name/${getData}`)
 .then(res=>res.json())
 .then(data=>singleCountry(data))   
@@ -76,14 +71,13 @@ else{
  alert('please put your country name')
 }
 }
-
 const singleCountry =(allData)=>{
+    document.getElementById('add-card').innerHTML=''
+    document.getElementById('single-card').innerHTML=''
     const singleCard =document.getElementById('single-card')
    allData.forEach(data=>{
-    // code: "BDT", name: "Bangladeshi taka", symbol: "৳" }
        const currencies =data.currencies[0]
        const {code,symbol}= currencies
-       console.log(currencies)
 const {name,nativeName,capital,flag,region,subregion,population,area,independent,demonym}=data
 const div = document.createElement('div')
 div.innerHTML=`
@@ -102,13 +96,11 @@ div.innerHTML=`
   <li class="list-group-item">Demonym : ${demonym}</li>
   <li class="list-group-item">Independent : ${independent}</li>
 </ul>
-
-
 `
 singleCard.appendChild(div)  
+document.getElementById('get-data').value=''
    })
-    
+} 
 
-//    console.log( allData[0])
 
-}
+/************************************************* srach by mohdesh ************************************************ */

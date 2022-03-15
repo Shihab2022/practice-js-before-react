@@ -16,7 +16,7 @@ const backgroudChange=(colorId)=>{
 /************************************************* card section************************************************ */
 
 
-const getAllDataFromServer= ()=>{
+/* const getAllDataFromServer= ()=>{
 
 
     fetch('https://restcountries.com/v2/all')
@@ -38,10 +38,10 @@ div.innerHTML=`
 <img src="${flag}" class="card-img-top h-100"  alt="...">
 <div class="card-body">
   <h5 class="card-title">${name}</h5>
-  <p class="card-text"> capital :${capital} </p>
-  <p class="card-text"> region :${region} </p>
-  <p class="card-text"> subregion :${subregion} </p>
-  <p class="card-text"> area :${area} </p>
+  <p class="card-text"> Capital :${capital} </p>
+  <p class="card-text"> Region :${region} </p>
+  <p class="card-text"> Subregion :${subregion} </p>
+  <p class="card-text"> Area :${area} </p>
   <p class="card-text"> Population :${population} </p>
   <p class="card-text"> Time Zone:${timezones} </p>
 </div>
@@ -55,23 +55,60 @@ addCard.appendChild(div)
    
    
 }
+getAllDataFromServer() */
 
 
 
 
 
+/************************************************* search section************************************************ */
+
+const search =()=>{
+
+const getData =document.getElementById('get-data').value
+if(getData){
+
+fetch(`https://restcountries.com/v2/name/${getData}`)
+.then(res=>res.json())
+.then(data=>singleCountry(data))   
+}
+else{
+ alert('please put your country name')
+}
+}
+
+const singleCountry =(allData)=>{
+    const singleCard =document.getElementById('single-card')
+   allData.forEach(data=>{
+    // code: "BDT", name: "Bangladeshi taka", symbol: "৳" }
+       const currencies =data.currencies[0]
+       const {code,symbol}= currencies
+       console.log(currencies)
+const {name,nativeName,capital,flag,region,subregion,population,area,independent,demonym}=data
+const div = document.createElement('div')
+div.innerHTML=`
+<img src="${flag}" class="card-img-top" alt="...">
+<div class="card-body">
+  <h3 class="card-title">Name : ${name}</h3>
+  <h5 class="card-title"> Native Name : ${nativeName}</h5>
+  <p class="card-text">Currencies : <br> Code: <span>${code}</span> <br>  Symbol : <span>${symbol}</span></p>
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Capital : ${capital}</li>
+  <li class="list-group-item">Region : ${region} </li>
+  <li class="list-group-item">Subregion : ${subregion}</li>
+  <li class="list-group-item">Area : ${area}</li>
+  <li class="list-group-item">Population : ${population}</li>
+  <li class="list-group-item">Demonym : ${demonym}</li>
+  <li class="list-group-item">Independent : ${independent}</li>
+</ul>
 
 
-// const getSingleDataFromServer=(countries)=>{
-
-// countries.map(country =>{
-
+`
+singleCard.appendChild(div)  
+   })
     
-    
-//     console.log(country.name)
 
+//    console.log( allData[0])
 
-// })
-// }
-getAllDataFromServer()
-// allCard()
+}
